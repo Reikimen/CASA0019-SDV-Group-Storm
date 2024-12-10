@@ -1,12 +1,14 @@
+#include <Wire.h>
+#include <Servo.h> 
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
-#include <Servo.h> 
+#include <LiquidCrystal_I2C.h>
 
-// #define SECRET_SSID "CE-Hub-Student"
-// #define SECRET_PASS "casa-ce-gagarin-public-service"
-#define SECRET_SSID "Reiki_Desktop"
-#define SECRET_PASS "Reikimen"
+#define SECRET_SSID "CE-Hub-Student"
+#define SECRET_PASS "casa-ce-gagarin-public-service"
+// #define SECRET_SSID "Reiki_Desktop"
+// #define SECRET_PASS "Reikimen"
 #define SECRET_MQTTUSER "student"
 #define SECRET_MQTTPASS "ce2021-mqtt-forget-whale";
 
@@ -30,6 +32,8 @@ PubSubClient client(espClient);
 
 Servo myServo;
 int servoPin = 2;
+
+LiquidCrystal_I2C lcd(0x27, 20, 4);
 
 float OutTemp_C = 0;
 float outHumidity = 0;
@@ -115,6 +119,13 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
 }
 
+void LCD_fixed_display(){
+  lcd.setCursor(0, 0);lcd.print("OPS Outdoor attire? ");
+  lcd.setCursor(0, 1);lcd.print("LOW: PLS Wear a lot!");
+  lcd.setCursor(0, 2);lcd.print("MEDIUM: Wear casual~");
+  lcd.setCursor(0, 3);lcd.print("HIGH: Dress cool!");
+}
+
 void setup_wifi() {
   delay(10);
   Serial.println("Connecting to WiFi...");
@@ -154,6 +165,9 @@ void setup() {
   client.setCallback(callback);
   myServo.attach(servoPin);
   myServo.write(0);
+  lcd.init();
+  lcd.backlight();
+  LCD_fixed_display();
 }
 
 void loop() {
