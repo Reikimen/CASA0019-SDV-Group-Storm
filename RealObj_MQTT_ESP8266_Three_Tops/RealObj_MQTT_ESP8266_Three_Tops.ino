@@ -1,6 +1,7 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
+#include <Servo.h> 
 
 // #define SECRET_SSID "CE-Hub-Student"
 // #define SECRET_PASS "casa-ce-gagarin-public-service"
@@ -21,11 +22,22 @@ const int mqtt_port       = 1884;
 
 // MQTT Topics
 const char* topic1 = "UCL/OPS/Garden/WST/dvp2/outTemp_C";
-const char* topic2 = "UCL/OPS/Garden/WST/dvp2/inTemp_C";
+const char* topic2 = "UCL/OPS/Garden/WST/dvp2/outHumidity";
 const char* topic3 = "UCL/OPS/Garden/WST/dvp2/windSpeed_kph";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
+
+Servo myServo;
+int servoPin = 2;
+
+float OutTemp_C = 0;
+float outHumidity = 0;
+float WindSpeed_kph = 0;
+float waterVaporPressure = 0;
+float apparentTemperature = 0;
+float Apparent_Index = 0;
+int servo_angle = 0;
 
 // The callback function when the message is received
 void callback(char* topic, byte* payload, unsigned int length) {
@@ -44,17 +56,63 @@ void callback(char* topic, byte* payload, unsigned int length) {
     Serial.println("Processing OutTemp_C...");
     Serial.println("OutTemp_C: " + message);
     // This is where the value of outTemp_C is resolved
+    OutTemp_C = message.toFloat();
   } else if (String(topic) == topic2) {
-    Serial.println("Processing InTemp_C...");
-    Serial.println("InTemp_C: " + message);
-    // This is where the value of InTemp_C is resolved
+    Serial.println("Processing outHumidity...");
+    Serial.println("outHumidity: " + message);
+    // This is where the value of outHumidity is resolved
+    outHumidity = message.toFloat();
   } else if (String(topic) == topic3) {
     Serial.println("Processing WindSpeed_kph...");
     Serial.println("WindSpeed_kph: " + message);
     // This is where the value of WindSpeed_kph is resolved
+    WindSpeed_kph = message.toFloat();
   } else {
     // Serial.println("Unknown topic!");
   }
+
+  // Calculate the Water Vapor Pressure and Apparent Temperature
+  // Calculate water vapor pressure
+  waterVaporPressure = (outHumidity / 100) * 6.105 * exp((17.27 * OutTemp_C) / (237.7 + OutTemp_C));
+  Serial.print("The water vapor pressure: ");
+  Serial.println(waterVaporPressure);  // 2 specifies the number of decimal places
+
+
+  // Calculate apparent temperature
+  apparentTemperature = (1.04 * OutTemp_C) + (0.2 * waterVaporPressure) - (0.65 * WindSpeed_kph) - 2.7;
+  Serial.print("The Apparent Temperature: ");
+  Serial.println(apparentTemperature);  // 2 specifies the number of decimal places
+
+  // % Define the variables
+  // OutTemp_C = 38.1;      % Outside temperature in Celsius
+  // outHumidity = 100;    % Relative humidity in percentage
+  // WindSpeed_kph = 0;  % Wind speed in kilometers per hour
+  // Apparent Temperature: 50.19
+
+  // % Define the variables
+  // OutTemp_C = -9.2;      % Outside temperature in Celsius
+  // outHumidity = 0;    % Relative humidity in percentage
+  // WindSpeed_kph = 60;  % Wind speed in kilometers per hour
+  // Apparent Temperature: -54.48
+
+  // % Define the variables, comfortable
+  // OutTemp_C = 21;      % Outside temperature in Celsius
+  // outHumidity = 50;    % Relative humidity in percentage
+  // WindSpeed_kph = 0.2;  % Wind speed in kilometers per hour
+  // Apparent Temperature: 21.49 -> 21.5
+
+  // Thus we get the highest, lowest and most comfortable possible body surface temperature (21.5 degrees)
+  // If we consider 5 degrees above and below the most comfortable temperature as the zone of moderate dressing, i.e. from 16.5 to 26.5 degrees, and 30 degrees above and below the most comfortable temperature, -11.5 to 51.5 degrees
+  // Calculate the index corresponding to Apparent Temperature (from 0-90): Apparent_Index
+  Apparent_Index = (apparentTemperature+11.5)*1.5;
+  if (Apparent_Index < 0) Apparent_Index = 0;
+  if (Apparent_Index > 90) Apparent_Index = 90;
+  Serial.print("The Apparent Index: ");
+  Serial.println(Apparent_Index);  // 2 specifies the number of decimal places
+
+  // calculate the servo angle for index display
+  servo_angle = int(Apparent_Index*2);
+
 }
 
 void setup_wifi() {
@@ -94,6 +152,8 @@ void setup() {
   setup_wifi();
   client.setServer(mqtt_server, mqtt_port);
   client.setCallback(callback);
+  myServo.attach(servoPin);
+  myServo.write(0);
 }
 
 void loop() {
@@ -101,4 +161,5 @@ void loop() {
     reconnect();
   }
   client.loop();
+  myServo.write(servo_angle);
 }
