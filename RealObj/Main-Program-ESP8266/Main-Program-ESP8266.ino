@@ -123,7 +123,7 @@ void LCD_fixed_display(){
   lcd.setCursor(0, 0);lcd.print("OPS Outdoor attire? ");
   lcd.setCursor(0, 1);lcd.print("LOW: PLS Wear a lot!");
   lcd.setCursor(0, 2);lcd.print("MEDIUM: Wear casual~");
-  lcd.setCursor(0, 3);lcd.print("HIGH: Dress cool!");
+  lcd.setCursor(0, 3);lcd.print("HIGH: Dress cool!   ");
 }
 
 void setup_wifi() {
