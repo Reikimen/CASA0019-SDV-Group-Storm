@@ -92,6 +92,12 @@ A device that provides clothing guidance based on real-time data can help people
 ### **Summary (still processing):**
 
 This code calculates the water vapor pressure and apparent temperature using temperature, humidity, and wind speed data. It then converts the apparent temperature to an index, which can be used to determine the appropriate amount of clothing to wear based on current weather conditions.  
+## DataSet  
+This Data Device uses the real time tempurature, humidty and wind speed from the UCL OPS Gardon.  
+## DATA DEVICE (Physical)  
+The device is in the shape of a bear and the icon indicates the body temperature index (at UCL OPS). When the index is in the “LOW” zone, it means that the temperature is low and you need to wear more clothes when you go out. When the index is in the “MEDIUM” zone, it means that the temperature is moderate and you can wear a normal amount of clothes. When the index is in the “HIGH” zone, it means that it is unusually hot outside, so try to wear cooler clothes.  
+## DATA DEVICE (Digital)  
+The AR part includes a dashboard and a digital version of the gauge. the digital version of the gauge performs the same function in AR as the real version, which is able to remind people of the current outdoor temperature conditions by pointing to different zones. And the dashboard provides additional information for tracking real-time weather conditions and short-term forecasts. It provides accurate real-time weather data such as temperature, humidity, wind speed and body temperature. In addition, it provides a line graph of these data for the next 6 hours to give people a better visualisation of the day's temperature changes so that they can be well prepared for the day's attire.(The API used for weather forecast: https://open-meteo.com/)  
 ## Limitations  
 ### 1.Sensor Accuracy and Maintenance  
 The reliability of the collected data depends heavily on the precision of the hardware sensors. Factors such as sensor quality, placement, and maintenance frequency can significantly influence the accuracy of temperature, humidity, and wind speed readings. If the sensors are not installed correctly or calibrated on a regular basis, the recorded data may deviate from actual conditions, thereby affecting the accuracy of the device’s index.  
