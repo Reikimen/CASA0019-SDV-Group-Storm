@@ -105,6 +105,11 @@ The reliability of the collected data depends heavily on the precision of the ha
 The feels-like temperature is not solely determined by temperature, humidity, and wind speed. Other important variables—such as solar radiation, an individual’s metabolic rate, and personal physical differences—also come into play. Failing to account for these factors may result in less accurate guidance.  
 ### 3.Variations in Individual Temperature Sensitivity  
 People differ in how sensitive they are to temperature changes, meaning there is no one-size-fits-all solution. While the device can offer general guidelines, personal comfort ranges vary widely; what is comfortable for one person may be too warm or too cool for another. Consequently, the clothing index may not be equally applicable to everyone.  
+## Future Improvements  
+### 1.Incorporating Additional Meteorological Parameters  
+Beyond temperature, humidity, and wind speed, consider integrating more external weather data such as UV index, air pressure, and air quality (e.g., PM2.5, PM10). For example, when the UV index is high, the system could prompt users to wear sun-protective clothing or a hat; when air quality is poor, users might be advised to wear a mask or reduce strenuous outdoor activities. By gathering more comprehensive weather parameters, clothing recommendations become more holistic, providing users with a broader range of health and comfort insights.  
+### 2.2. Add a virtual Avatar  
+Incorporating a virtual figure or 3D model that can change outfits on-screen offers a more intuitive way of showing which clothing items or combinations are appropriate for the current clothing index.
 
 ## Reference  
 Steadman, R.G. (1984). A Universal Scale of Apparent Temperature. Journal of Climate and Applied Meteorology, 23(12), pp.1674–1687. doi:https://doi.org/10.1175/1520-0450(1984)023%3C1674:ausoat%3E2.0.co;2.
