@@ -6,11 +6,10 @@ typora-root-url: ./
 
 ![Gauge-AR-dashborad](/Image/Web-Showcase/Gauge-AR-dashborad.png)
 
-	```cpp
+```
 Dankao Chen : 24067882  
 Muchen Han  : 24100754  
 Ying Wu     : 23074009
-	```
 
 
 
