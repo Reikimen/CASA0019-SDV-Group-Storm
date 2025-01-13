@@ -52,28 +52,36 @@ This Data Device (both Physical and Digital one) uses the real time tempurature,
 ### DATA DEVICE (Physical)  
 The device is in the shape of a bear and the icon indicates the body temperature index (at UCL OPS). 
 
+#### Device Workflow (Arduino)
+
+<img src="/Image/Readme/ESP8266_Program_Flowchart.png" alt="ESP8266_Program_Flowchart" style="zoom:60%;" />
+
+The flowchart above shows the workflow of the physical part of the project: the program starts and instantiates the Wi-Fi and connects to the specified MQTT proxy, subscribes to the relevant topics and enters the main loop. In the loop, the programme processes incoming MQTT messages, updates the LCD display based on the data, and controls the servos when needed. The main loop runs continuously, but no shutdown condition is set.
+
+
+
+#### Equipment structural design (Fusion)
+
+<img src="/Image/Readme/bear-guage.jpg" alt="bear-guage" style="zoom:33%;" />
+
+When the index is in the “LOW” zone, it means that the temperature is low and you need to wear more clothes when you go out. When the index is in the “MEDIUM” zone, it means that the temperature is moderate and you can wear a normal amount of clothes. When the index is in the “HIGH” zone, it means that it is unusually hot outside, so try to wear cooler clothes.  
+
+
+
+### DATA DEVICE (Digital)  
+The AR part includes a dashboard and a digital version of the gauge. The digital version of the gauge performs the same function in AR as the real version, which is able to remind people of the current outdoor temperature conditions by pointing to different zones. 
+
 #### Views inside Unity
 
 <img src="/Image/Readme/AR-Guage-Dashboard.jpg" alt="AR-Guage-Dashboard" style="zoom: 27%;" />
 
-When the index is in the “LOW” zone, it means that the temperature is low and you need to wear more clothes when you go out. When the index is in the “MEDIUM” zone, it means that the temperature is moderate and you can wear a normal amount of clothes. When the index is in the “HIGH” zone, it means that it is unusually hot outside, so try to wear cooler clothes.  
+And the dashboard provides additional information for tracking real-time weather conditions and short-term forecasts. It provides accurate real-time weather data such as temperature, humidity, wind speed and body temperature. In addition, it provides a line graph of these data for the next 6 hours to give people a better visualisation of the day's temperature changes so that they can be well prepared for the day's attire.
 
 #### Dashboard Design
 
 <img src="/Image/Readme/Dashboard-only.jpg" alt="Dashboard-only" style="zoom:40%;" />
 
 Above is the example dashboard display (13 January 2025 07:35:27). The left side shows the current temperature (5°C), humidity (77%), wind speed (3km/h) and body temperature (2°C) with a graphical representation of the change in body temperature. On the right side is the weather forecast for the next 6 hours, including the trend graphs of temperature, humidity, wind speed and body temperature. The whole interface is simple and intuitive for real-time weather monitoring.
-
-
-
-### DATA DEVICE (Digital)  
-The AR part includes a dashboard and a digital version of the gauge. the digital version of the gauge performs the same function in AR as the real version, which is able to remind people of the current outdoor temperature conditions by pointing to different zones. And the dashboard provides additional information for tracking real-time weather conditions and short-term forecasts. It provides accurate real-time weather data such as temperature, humidity, wind speed and body temperature. In addition, it provides a line graph of these data for the next 6 hours to give people a better visualisation of the day's temperature changes so that they can be well prepared for the day's attire.
-
-#### Equipment structural design (Fusion)
-
-
-
-
 
 
 
@@ -102,7 +110,7 @@ The AR part includes a dashboard and a digital version of the gauge. the digital
 
 - This formula combines temperature, humidity, and wind speed to calculate the apparent temperature.
 
-3. **Find the ups, comfortable and collars of the Apparent Temp (From Wiki: London Greenwich Weather Station):**
+3. **Find the ups, comfortable and collars of the Apparent Temp (From Wiki: Climate of London, Greenwich Weather Station):**
 
    - **High Temperature Condition:**
 
@@ -225,6 +233,8 @@ Incorporating a virtual figure or 3D model that can change outfits on-screen off
 
 ## Reference  
 Steadman, R.G. (1984). A Universal Scale of Apparent Temperature. Journal of Climate and Applied Meteorology, 23(12), pp.1674–1687. doi:https://doi.org/10.1175/1520-0450(1984)023%3C1674:ausoat%3E2.0.co;2.
+
+Climate of London: https://en.wikipedia.org/wiki/Climate_of_London
 
 
 
