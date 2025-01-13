@@ -4,23 +4,13 @@
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
 #include <LiquidCrystal_I2C.h>
+#include "secret.h"
 
-#define SECRET_SSID "CE-Hub-Student"
-#define SECRET_PASS "casa-ce-gagarin-public-service"
-// #define SECRET_SSID "Reiki_Desktop"
-// #define SECRET_PASS "Reikimen"
-#define SECRET_MQTTUSER "student"
-#define SECRET_MQTTPASS "ce2021-mqtt-forget-whale";
 
 // WiFi information
 const char* ssid          = SECRET_SSID;
 const char* password      = SECRET_PASS;
 
-// MQTT server information
-const char* mqtt_user = SECRET_MQTTUSER;
-const char* mqtt_password = SECRET_MQTTPASS;
-const char* mqtt_server   = "mqtt.cetools.org";
-const int mqtt_port       = 1884;
 
 // MQTT Topics
 const char* topic1 = "UCL/OPS/Garden/WST/dvp2/outTemp_C";
