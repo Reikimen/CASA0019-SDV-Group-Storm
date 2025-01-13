@@ -104,7 +104,10 @@ The reliability of the collected data depends heavily on the precision of the ha
 ### 2.Complexity of Feels-Like Temperature Calculation  
 The feels-like temperature is not solely determined by temperature, humidity, and wind speed. Other important variables—such as solar radiation, an individual’s metabolic rate, and personal physical differences—also come into play. Failing to account for these factors may result in less accurate guidance.  
 ### 3.Variations in Individual Temperature Sensitivity  
-People differ in how sensitive they are to temperature changes, meaning there is no one-size-fits-all solution. While the device can offer general guidelines, personal comfort ranges vary widely; what is comfortable for one person may be too warm or too cool for another. Consequently, the clothing index may not be equally applicable to everyone.
+People differ in how sensitive they are to temperature changes, meaning there is no one-size-fits-all solution. While the device can offer general guidelines, personal comfort ranges vary widely; what is comfortable for one person may be too warm or too cool for another. Consequently, the clothing index may not be equally applicable to everyone.  
+
+## Reference  
+Steadman, R.G. (1984). A Universal Scale of Apparent Temperature. Journal of Climate and Applied Meteorology, 23(12), pp.1674–1687. doi:https://doi.org/10.1175/1520-0450(1984)023%3C1674:ausoat%3E2.0.co;2.
 
 
 
