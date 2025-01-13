@@ -108,7 +108,7 @@ People differ in how sensitive they are to temperature changes, meaning there is
 ## Future Improvements  
 ### 1.Incorporating Additional Meteorological Parameters  
 Beyond temperature, humidity, and wind speed, consider integrating more external weather data such as UV index, air pressure, and air quality (e.g., PM2.5, PM10). For example, when the UV index is high, the system could prompt users to wear sun-protective clothing or a hat; when air quality is poor, users might be advised to wear a mask or reduce strenuous outdoor activities. By gathering more comprehensive weather parameters, clothing recommendations become more holistic, providing users with a broader range of health and comfort insights.  
-### 2.2. Add a virtual Avatar  
+### 2.Add a virtual Avatar  
 Incorporating a virtual figure or 3D model that can change outfits on-screen offers a more intuitive way of showing which clothing items or combinations are appropriate for the current clothing index.
 
 ## Reference  
