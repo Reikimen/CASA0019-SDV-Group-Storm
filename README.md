@@ -91,7 +91,14 @@ A device that provides clothing guidance based on real-time data can help people
 
 ### **Summary (still processing):**
 
-This code calculates the water vapor pressure and apparent temperature using temperature, humidity, and wind speed data. It then converts the apparent temperature to an index, which can be used to determine the appropriate amount of clothing to wear based on current weather conditions.
+This code calculates the water vapor pressure and apparent temperature using temperature, humidity, and wind speed data. It then converts the apparent temperature to an index, which can be used to determine the appropriate amount of clothing to wear based on current weather conditions.  
+## Limitations  
+### 1.Sensor Accuracy and Maintenance  
+The reliability of the collected data depends heavily on the precision of the hardware sensors. Factors such as sensor quality, placement, and maintenance frequency can significantly influence the accuracy of temperature, humidity, and wind speed readings. If the sensors are not installed correctly or calibrated on a regular basis, the recorded data may deviate from actual conditions, thereby affecting the accuracy of the device’s index.  
+### 2.Complexity of Feels-Like Temperature Calculation  
+The feels-like temperature is not solely determined by temperature, humidity, and wind speed. Other important variables—such as solar radiation, an individual’s metabolic rate, and personal physical differences—also come into play. Failing to account for these factors may result in less accurate guidance.  
+### 3.Variations in Individual Temperature Sensitivity  
+People differ in how sensitive they are to temperature changes, meaning there is no one-size-fits-all solution. While the device can offer general guidelines, personal comfort ranges vary widely; what is comfortable for one person may be too warm or too cool for another. Consequently, the clothing index may not be equally applicable to everyone.
 
 
 
