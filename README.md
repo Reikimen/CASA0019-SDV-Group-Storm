@@ -12,7 +12,13 @@ typora-root-url: ./
 
 Students at UCL EAST (including my group members and I) experience this situation quite often: because the classroom is heated or air-conditioned, a fairly comfortable office environment is maintained, resulting in a sudden cold wind that freezes you into a popsicle or a sun that is about to melt you when you go out. To solve this problem, our group designed a dial that displays the outdoor body temperature as a reminder to dress and undress.
 
-This is the URL used for showcase: https://codepen.io/Reikimen/pen/NPKRRJR
+This is the URL used for showcase: https://codepen.io/Reikimen/pen/NPKRRJR  
+
+## Background and Motivation  
+In daily life, people’s clothing choices are often influenced by the weather. However, most tend to rely solely on the temperature indicated in weather forecasts, overlooking other environmental factors that affect how the human body actually perceives temperature. For instance, under the same temperature, higher humidity can make a person feel stuffier or colder; meanwhile, in a windy environment, even a relatively high temperature may still feel chilly due to the wind chill effect.  
+On the other hand, indoor and outdoor environments differ in terms of temperature, humidity, and wind speed. And indoor conditions can shift continually because of factors such as heating or air conditioning. For example, in winter, even if it is cold outside, turning on indoor heating may raise the indoor temperature significantly, making it uncomfortably hot if one dresses solely based on outdoor conditions. In summer, variations in air conditioning efficiency can result in some areas being quite cool while others remain relatively stuffy, making it difficult to gauge the appropriate level of clothing thickness.  
+A device that provides clothing guidance based on real-time data can help people avoid health issues stemming from inappropriate dress, allowing them to remain comfortable throughout different seasons and weather conditions, and better adapt to changing environments.
+
 
 ## How can we define the criteria for dressing?
 
