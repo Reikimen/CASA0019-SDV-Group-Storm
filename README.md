@@ -6,6 +6,20 @@ typora-root-url: ./
 
 ![Gauge-AR-dashborad](/Image/Web-Showcase/Gauge-AR-dashborad.png)
 
+## Our valuable Contributors👩‍💻👨‍💻 :
+
+<a href="https://github.com/Reikimen/CASA0019-SDV-Group-Storm/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=Reikimen/CASA0019-SDV-Group-Storm" />
+</a>
+
+```json
+Dankao Chen : 24067882  
+Muchen Han  : 24100754  
+Ying Wu     : 23074009
+```
+
+**Github:** https://github.com/Reikimen/CASA0019-SDV-Group-Storm
+
 
 
 ## Wondering how much clothing you need to wear before walking out of the building?
@@ -232,20 +246,6 @@ In the earliest stages of the project, Ethan played a very important role in pro
 >Surface design, pointer design, fusion to Blender, Texture design in blender, part of 3D printing work, writing of the GitHub homepage
 
 Although the division of labour does not appear to be the same number of tasks in terms of descriptions, our group has a reasonable division of labour and clear responsibilities, considering the different levels of difficulty of the tasks. Through the above division of labour, team members not only completed their respective tasks well, but also managed to communicate well with each other to ensure the synergistic development of the project.
-
-
-
-### Our valuable Contributors👩‍💻👨‍💻 :
-
-<a href="https://github.com/Reikimen/CASA0019-SDV-Group-Storm/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=Reikimen/CASA0019-SDV-Group-Storm" />
-</a>
-
-```json
-Dankao Chen : 24067882  
-Muchen Han  : 24100754  
-Ying Wu     : 23074009
-```
 
 
 
