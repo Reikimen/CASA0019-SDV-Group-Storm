@@ -83,6 +83,10 @@ And the dashboard provides additional information for tracking real-time weather
 
 Above is the example dashboard display (13 January 2025 07:35:27). The left side shows the current temperature (5°C), humidity (77%), wind speed (3km/h) and body temperature (2°C) with a graphical representation of the change in body temperature. On the right side is the weather forecast for the next 6 hours, including the trend graphs of temperature, humidity, wind speed and body temperature. The whole interface is simple and intuitive for real-time weather monitoring.
 
+#### Unity into AR
+
+In AR Bear Gauge, all interactions are controlled through a custom C# script implemented in Unity (aka mqttmcontroller). After Unity was completed, it was installed on a Google phone in CE LAB through the unity export APK feature. Using the mobile phone, scan the QR code laid flat on the desktop to display the AR bear Gauge.
+
 
 
 ### How can we define the criteria for dressing?
@@ -156,8 +160,41 @@ This code calculates the water vapor pressure and apparent temperature using tem
 
 
 ## Intro of Project Repo
+```html
+CASA0019-SDV-GROUP-STORM/
+├── blender/
+├── Fusion/
+│   ├── Glass-cover/
+│   ├── Main-Box/
+│   ├── Pointer/
+│   ├── SG90-Holder/
+│   ├── Data-visualization-release-v1.0.f3d
+│   └── Data-visualization-release-v1.0.fbx
+├── Image/
+│   ├── Assert/
+│   ├── Readme/
+│   └── Web-Showcase/
+├── RealObj/
+│   ├── Components/
+│   └── Main-Program-ESP8266/
+├── Reference/
+├── unity/
+│   ├── 2 in 1/
+│   ├── dashboard/
+│   ├── pointer/
+│   ├── Prefabs/
+│   └── Scripts/
+├── QR-code-CASA0019-Group-Storm.png
+└── README.md
+```
 
+The above project structure ensures:
 
+**Functional partitions**: categorised by design tools (e.g. Blender and Fusion), development environments (e.g. Unity and ESP8266), making it easy for developers to quickly locate relevant files.
+
+**Content partitioning**: separates images, hardware files and reference materials to ensure clear resource management.
+
+**Separation of code and design**: Hardware, software, 3D models and scripts are categorised to help avoid confusion when collaborating with multiple people.
 
 
 
