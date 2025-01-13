@@ -2,9 +2,15 @@
 typora-root-url: ./
 ---
 
-# CASA0019-SDV-Group-Storm
+# CASA0019-SDV-Group-Storm -- Final Report
 
 ![Gauge-AR-dashborad](/Image/Web-Showcase/Gauge-AR-dashborad.png)
+
+	```cpp
+Dankao Chen : 24067882  
+Muchen Han  : 24100754  
+Ying Wu     : 23074009
+	```
 
 
 
